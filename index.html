@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Pemesanan tiga unit vila di Vila Permai, kawasan Puncak, Bogor.">
+  <title>Vila Permai | Pemesanan Vila</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="#" aria-label="Vila Permai, beranda">
+        <span class="brand__icon" aria-hidden="true">⌂</span>
+        <span>Vila <strong>Permai</strong></span>
+      </a>
+      <nav class="site-nav" aria-label="Navigasi utama">
+        <a href="#daftar-vila">Pilihan Vila</a>
+        <a href="#pemesanan">Pemesanan</a>
+        <a href="#kontak">Kontak</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero__content">
+        <p class="eyebrow">Liburan nyaman di kawasan Puncak</p>
+        <h1>Selamat datang di Vila Permai</h1>
+        <p>Nikmati suasana sejuk Puncak bersama keluarga. Pilih vila, tentukan tanggal, dan lihat perkiraan biaya sebelum memesan.</p>
+        <a class="button button--light" href="#pemesanan">Pesan vila</a>
+      </div>
+    </section>
+
+    <section class="section container" id="daftar-vila">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Akomodasi kami</p>
+          <h2>Pilihan vila</h2>
+          <p class="section-heading__description">Tersedia tiga unit vila dengan fasilitas untuk kebutuhan liburan Anda.</p>
+        </div>
+        <div class="search-box">
+          <label for="cari-vila">Cari vila</label>
+          <input id="cari-vila" type="search" placeholder="Nama, tipe, atau fasilitas..." autocomplete="off">
+        </div>
+      </div>
+      <div class="villa-grid" id="daftar-kartu-vila" aria-live="polite">
+        <p class="notice">Memuat daftar vila...</p>
+      </div>
+    </section>
+
+    <section class="booking-section" id="pemesanan">
+      <div class="container booking-layout">
+        <div class="booking-intro">
+          <p class="eyebrow">Rencanakan kunjungan Anda</p>
+          <h2>Formulir pemesanan</h2>
+          <p>Isi data berikut untuk memeriksa ketersediaan dan menghitung perkiraan biaya menginap.</p>
+          <div class="info-note">
+            <strong>Informasi harga</strong>
+            <p>Harga dihitung berdasarkan jumlah malam menginap. Jumlah tamu digunakan untuk informasi kapasitas, bukan pengali harga.</p>
+          </div>
+        </div>
+
+        <div class="booking-card">
+          <form id="form-pemesanan" novalidate>
+            <div class="form-group">
+              <label for="nama-tamu">Nama lengkap tamu</label>
+              <input id="nama-tamu" name="nama" type="text" placeholder="Contoh: Andi Saputra" autocomplete="name" required>
+              <small class="field-error" id="error-nama"></small>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="check-in">Tanggal check-in</label>
+                <input id="check-in" name="checkin" type="date" required>
+                <small class="field-error" id="error-checkin"></small>
+              </div>
+              <div class="form-group">
+                <label for="check-out">Tanggal check-out</label>
+                <input id="check-out" name="checkout" type="date" required>
+                <small class="field-error" id="error-checkout"></small>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="jumlah-tamu">Jumlah tamu</label>
+                <input id="jumlah-tamu" name="jumlahTamu" type="number" min="1" max="10" value="2" required>
+                <small class="field-error" id="error-tamu"></small>
+              </div>
+              <div class="form-group">
+                <label for="pilihan-vila">Pilih unit vila</label>
+                <select id="pilihan-vila" name="villa" required>
+                  <option value="">Pilih unit vila</option>
+                </select>
+                <small class="field-error" id="error-vila"></small>
+              </div>
+            </div>
+
+            <div class="price-preview" id="ringkasan-biaya" aria-live="polite">
+              <h3>Perkiraan biaya</h3>
+              <p class="price-preview__hint">Pilih vila dan tanggal menginap untuk melihat total biaya.</p>
+            </div>
+
+            <div class="form-actions">
+              <button class="button button--outline" id="tombol-cek" type="button">Cek Ketersediaan</button>
+              <button class="button button--primary" type="submit">Pesan Sekarang</button>
+            </div>
+            <p class="form-message" id="pesan-form" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="section container" id="hasil-pemesanan">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Catatan Anda</p>
+          <h2>Pesanan tersimpan</h2>
+          <p class="section-heading__description">Pesanan contoh disimpan di browser perangkat ini.</p>
+        </div>
+      </div>
+      <div class="orders-list" id="daftar-pesanan" aria-live="polite">
+        <p class="notice">Belum ada pesanan tersimpan.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="kontak">
+    <div class="container footer-content">
+      <div>
+        <h2>Vila Permai</h2>
+        <p>Tempat beristirahat dan menikmati sejuknya kawasan Puncak, Bogor.</p>
+      </div>
+      <div>
+        <h3>Kontak pemilik</h3>
+        <p>Pak Hendra</p>
+        <p>WhatsApp: 0812-0000-0000 <span class="footer-note">(ganti dengan nomor pemilik)</span></p>
+        <p>Lokasi: Puncak, Kabupaten Bogor</p>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>© <span id="tahun-sekarang"></span> Vila Permai. Seluruh hak cipta dilindungi.</p>
+    </div>
+  </footer>
+</body>
+</html>
