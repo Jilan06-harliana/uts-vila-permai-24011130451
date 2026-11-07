@@ -1,0 +1,569 @@
+/* Pengaturan dasar */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: #24352e;
+  background: #fbfcf8;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+.container {
+  width: min(1120px, calc(100% - 40px));
+  margin: 0 auto;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: #ffffff;
+  border-bottom: 1px solid #e6ece5;
+}
+
+.site-header__inner {
+  min-height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #245b43;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.brand__icon {
+  display: grid;
+  width: 38px;
+  height: 38px;
+  place-items: center;
+  color: #ffffff;
+  background: #397b58;
+  border-radius: 12px;
+  font-size: 1.5rem;
+}
+
+.site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 26px;
+  color: #52645a;
+  font-size: 0.95rem;
+}
+
+.site-nav a:hover {
+  color: #26704a;
+}
+
+.hero {
+  padding: 82px 0;
+  color: #ffffff;
+  background: linear-gradient(120deg, #194c37, #43865d);
+}
+
+.hero__content {
+  max-width: 1120px;
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  color: #6b9a79;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.hero .eyebrow {
+  color: #d3e9d7;
+}
+
+.hero h1 {
+  max-width: 680px;
+  margin: 0 0 14px;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  line-height: 1.12;
+}
+
+.hero p:not(.eyebrow) {
+  max-width: 620px;
+  margin: 0 0 26px;
+  color: #e8f2e9;
+  font-size: 1.05rem;
+}
+
+.button {
+  display: inline-flex;
+  min-height: 46px;
+  align-items: center;
+  justify-content: center;
+  padding: 11px 18px;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 700;
+  transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 7px 16px rgba(25, 61, 42, 0.14);
+}
+
+.button--light {
+  color: #245b43;
+  background: #ffffff;
+}
+
+.button--light:hover {
+  background: #edf6ee;
+}
+
+.button--primary {
+  color: #ffffff;
+  background: #2f704b;
+}
+
+.button--primary:hover {
+  background: #245b3c;
+}
+
+.button--outline {
+  color: #2f704b;
+  background: #ffffff;
+  border-color: #9dbba5;
+}
+
+.button--outline:hover {
+  background: #eef6ef;
+}
+
+.section {
+  padding-top: 68px;
+  padding-bottom: 68px;
+}
+
+.section-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 26px;
+}
+
+.section-heading h2,
+.booking-intro h2 {
+  margin: 0 0 8px;
+  color: #214d37;
+  font-size: clamp(1.7rem, 3vw, 2.25rem);
+}
+
+.section-heading__description {
+  margin: 0;
+  color: #6b786f;
+}
+
+.search-box {
+  width: min(330px, 100%);
+}
+
+.search-box label,
+.form-group label {
+  display: block;
+  margin-bottom: 7px;
+  color: #344b3d;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.search-box input,
+.form-group input,
+.form-group select {
+  width: 100%;
+  min-height: 46px;
+  padding: 10px 12px;
+  color: #24352e;
+  background: #ffffff;
+  border: 1px solid #d4dfd5;
+  border-radius: 9px;
+  outline: none;
+}
+
+.search-box input:focus,
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #4c9363;
+  box-shadow: 0 0 0 3px rgba(76, 147, 99, 0.13);
+}
+
+.villa-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.villa-card {
+  overflow: hidden;
+  padding: 22px;
+  background: #ffffff;
+  border: 1px solid #e0e9df;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(34, 71, 47, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  animation: appear 0.35s ease both;
+}
+
+.villa-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 26px rgba(34, 71, 47, 0.11);
+}
+
+.villa-card__top {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.villa-card h3 {
+  margin: 0 0 4px;
+  color: #245b3f;
+  font-size: 1.2rem;
+}
+
+.villa-card__type,
+.villa-card__location {
+  margin: 0;
+  color: #738078;
+  font-size: 0.9rem;
+}
+
+.villa-card__price {
+  margin: 18px 0 12px;
+  color: #286b45;
+  font-size: 1.35rem;
+  font-weight: 800;
+}
+
+.villa-card__price span {
+  color: #7a877e;
+  font-size: 0.82rem;
+  font-weight: 400;
+}
+
+.villa-card__facilities {
+  min-height: 52px;
+  margin: 0 0 16px;
+  padding-left: 19px;
+  color: #52645a;
+  font-size: 0.9rem;
+}
+
+.status {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 30px;
+  color: #23613b;
+  background: #e7f4e9;
+  font-size: 0.78rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.status--unavailable {
+  color: #9a4b32;
+  background: #fff0e9;
+}
+
+.booking-section {
+  padding: 70px 0;
+  background: #eff5ee;
+}
+
+.booking-layout {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  align-items: start;
+  gap: 44px;
+}
+
+.booking-intro > p:not(.eyebrow) {
+  color: #68776d;
+}
+
+.info-note {
+  margin-top: 28px;
+  padding: 18px;
+  background: #e3eee2;
+  border-left: 4px solid #4d8a5d;
+  border-radius: 8px;
+}
+
+.info-note p {
+  margin: 5px 0 0;
+  color: #596d5d;
+  font-size: 0.9rem;
+}
+
+.booking-card {
+  padding: 28px;
+  background: #ffffff;
+  border: 1px solid #e0e9df;
+  border-radius: 16px;
+  box-shadow: 0 10px 28px rgba(34, 71, 47, 0.07);
+}
+
+.form-group {
+  min-width: 0;
+  margin-bottom: 17px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.field-error {
+  display: block;
+  min-height: 18px;
+  margin-top: 4px;
+  color: #b33c32;
+  font-size: 0.78rem;
+}
+
+.price-preview {
+  margin: 8px 0 20px;
+  padding: 18px;
+  background: #f3f8f2;
+  border: 1px dashed #a8c5aa;
+  border-radius: 12px;
+}
+
+.price-preview h3 {
+  margin: 0 0 10px;
+  color: #285b3d;
+  font-size: 1.05rem;
+}
+
+.price-preview__hint {
+  margin: 0;
+  color: #718075;
+  font-size: 0.9rem;
+}
+
+.price-line {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  margin: 5px 0;
+  color: #59685e;
+  font-size: 0.9rem;
+}
+
+.price-line--total {
+  margin-top: 12px;
+  padding-top: 12px;
+  color: #245b3f;
+  border-top: 1px solid #d7e5d6;
+  font-size: 1.08rem;
+  font-weight: 800;
+}
+
+.form-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.form-message {
+  min-height: 22px;
+  margin: 13px 0 0;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.form-message--success {
+  color: #287247;
+}
+
+.form-message--error {
+  color: #b33c32;
+}
+
+.orders-list {
+  display: grid;
+  gap: 12px;
+}
+
+.order-item {
+  padding: 16px 18px;
+  background: #ffffff;
+  border: 1px solid #e0e9df;
+  border-radius: 12px;
+}
+
+.order-item h3 {
+  margin: 0 0 5px;
+  color: #285b3d;
+}
+
+.order-item p {
+  margin: 3px 0;
+  color: #65736a;
+  font-size: 0.9rem;
+}
+
+.notice {
+  margin: 0;
+  padding: 18px;
+  color: #718075;
+  background: #ffffff;
+  border: 1px dashed #ccd9cc;
+  border-radius: 12px;
+}
+
+.site-footer {
+  padding: 42px 0 18px;
+  color: #e7f0e8;
+  background: #193d2d;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  padding-bottom: 26px;
+}
+
+.footer-content h2,
+.footer-content h3 {
+  margin: 0 0 10px;
+  color: #ffffff;
+}
+
+.footer-content p {
+  margin: 4px 0;
+  color: #c7d8ca;
+}
+
+.footer-note {
+  color: #a9c1ae;
+  font-size: 0.82rem;
+}
+
+.footer-bottom {
+  padding-top: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.footer-bottom p {
+  margin: 0;
+  color: #b7cabb;
+  font-size: 0.82rem;
+}
+
+@keyframes appear {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+  .site-header__inner {
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+
+  .site-nav {
+    gap: 18px;
+  }
+
+  .hero {
+    padding: 64px 0;
+  }
+
+  .section {
+    padding-top: 52px;
+    padding-bottom: 52px;
+  }
+
+  .section-heading {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .search-box {
+    width: 100%;
+  }
+
+  .villa-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .booking-layout {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    width: min(100% - 28px, 1120px);
+  }
+
+  .site-nav {
+    width: 100%;
+    justify-content: space-between;
+    gap: 10px;
+    font-size: 0.85rem;
+  }
+
+  .hero {
+    padding: 52px 0;
+  }
+
+  .villa-grid,
+  .form-row,
+  .footer-content {
+    grid-template-columns: 1fr;
+  }
+
+  .booking-card {
+    padding: 20px 16px;
+  }
+
+  .form-actions {
+    flex-direction: column;
+  }
+
+  .form-actions .button {
+    width: 100%;
+  }
+}
